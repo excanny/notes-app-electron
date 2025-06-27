@@ -47,7 +47,7 @@ Before starting:
 ### 1. Clone the Repository or Download Source Code:
 
 ```bash
-git clone https://github.com/yourusername/notes-app.git
+git clone https://github.com/excanny/notes-app-electron.git
 cd notes-app
 ```
 
