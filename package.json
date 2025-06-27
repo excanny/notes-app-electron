@@ -1,0 +1,73 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "main": "src/main/app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "NotesApp",
+  "build": {
+    "appId": "com.notes-app.notes-app",
+    "productName": "notes-app",
+    "files": [
+      "src/**/*",
+      "public/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "src/renderer/assets/icons/n_logo.icns"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/renderer/assets/icons/n_logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "installerIcon": "src/renderer/assets/icons/n_logo.ico",
+      "installerHeaderIcon": "src/renderer/assets/icons/n_logo.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "uninstallerIcon": "src/renderer/assets/icons/n_logo.ico",
+      "uninstallDisplayName": "NotesApp",
+      "deleteAppDataOnUninstall": true,
+      "runAfterFinish": true
+    },
+    "artifactName": "${productName} Setup.exe",
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}

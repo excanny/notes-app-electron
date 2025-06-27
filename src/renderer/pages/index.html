@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+
+</head>
+<body>
+    <div id="update-message" style="display: none;">
+        <span id="update-text">Update available!</span>
+        <button id="dismiss-update" title="Dismiss">❌</button>
+    </div>
+
+    <div class="app-container">
+        <div class="app-header">
+            <div class="app-title">
+                <span>📝</span>
+                My Notes
+            </div>
+            <div class="app-controls">
+                <button id="new-note-btn" class="btn btn-primary">
+                    <span>➕</span> New Note
+                </button>
+                <button id="app-close-btn" class="btn btn-secondary">
+                    <span>❌</span> Close
+                </button>
+            </div>
+        </div>
+
+        <div id="db-status" class="db-status">
+            <span>🔄</span> Initializing...
+        </div>
+
+        <div class="app-body">
+            <div id="notes-list" class="notes-grid">
+                <div class="loading">Loading notes...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="note-editor" class="note-editor">
+        <div class="editor-modal">
+            <h2>Create New Note</h2>
+            <div class="form-group">
+                <label for="note-title">Title</label>
+                <input type="text" id="note-title" placeholder="Enter note title...">
+            </div>
+            <div class="form-group">
+                <label for="note-content">Content</label>
+                <textarea id="note-content" placeholder="Write your note here..."></textarea>
+            </div>
+            <div class="editor-actions">
+                <button id="cancel-btn" class="btn btn-cancel">Cancel</button>
+                <button id="save-btn" class="btn btn-save">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <script defer type="module" src="../notesRenderer.js"></script>
+</body>
+
+</html>
